@@ -1,0 +1,112 @@
+.webcam-frame-wrapper {
+  --notchSize: 15px;
+  height: 300px;
+  width: 256px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.wf-left {
+  left: 40px;
+}
+
+.wf-right {
+  right: 40px;
+}
+
+.webcam-title-wrapper {
+  filter: drop-shadow(8px 3px #FFF8);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+.webcam-title {
+  padding: 5px;
+  padding-right: 15px;
+  background-color: #fc6c85;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--notchSize)) 0,
+    100% var(--notchSize),
+    100% calc(100% - var(--notchSize)),
+    100% 100%,
+    0 100%
+  );
+}
+
+.webcam-title::after {
+  content: '';
+  position: absolute;
+  height: 6px;
+  background-color: #FFBBB4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.webcam-title-mask {
+  filter: opacity(0);
+}
+
+.webcam-wrapper {
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(
+    0 -3px,
+    -3px calc(100% + 8px),
+    calc(100% + 11px) calc(100% + 8px),
+    calc(100% + 11px ) -3px,
+    0 -3px,
+    3px 0,
+    calc(100% + 3px) 0,
+    calc(100% + 3px) calc(100% - var(--notchSize)),
+    calc(100% + 3px - var(--notchSize)) 100%,
+    calc(3px + var(--notchSize)) 100%,
+    3px calc(100% - var(--notchSize)),
+    3px 0
+  );
+}
+
+.webcam-wrapper-mask {
+  clip-path: none;
+}
+
+.webcam-border {
+  height: 100%;
+  width: 100%;
+  filter:
+    drop-shadow(3px 0 #71A95A)
+    drop-shadow(-3px 0 #71A95A)
+    drop-shadow(0 3px #71A95A)
+    drop-shadow(0 -3px #71A95A)
+    drop-shadow(5px 5px 0 #0004)
+  ;
+}
+
+.webcam-border-mask {
+  filter: none;
+}
+
+.webcam-content {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  margin-left: 3px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--notchSize)),
+    calc(100% - var(--notchSize)) 100%,
+    var(--notchSize) 100%,
+    0% calc(100% - var(--notchSize))
+  );
+}
