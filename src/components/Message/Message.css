@@ -54,7 +54,6 @@
     drop-shadow(0 3px var(--messageColor))
     drop-shadow(0 -3px var(--messageColor))
     drop-shadow(3px 3px 0 #0005)
-    opacity(80%)
   ;
 }
 
