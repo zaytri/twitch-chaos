@@ -5,6 +5,7 @@ import Message from 'components/Message'
 import tmi from 'tmi.js'
 import Parse from 'helpers/Parse'
 import { Channel } from 'helpers/Constants'
+import MessageEnterSound from './message_enter.wav'
 
 const MESSAGE_EVENT = 'message'
 const DEFAULT_COLORS = [
@@ -72,6 +73,9 @@ function Messages() {
       position: [left, top],
       color: color || generateColor(name)
     }))
+
+    const sound = new Audio(MessageEnterSound)
+    sound.play()
   }
 
   useEffect(() => {
