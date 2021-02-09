@@ -120,7 +120,7 @@
 }
 
 .emote3 {
-  height: 112px;
+  height: calc(112px * 2 / 3);
 }
 
 .gradient {

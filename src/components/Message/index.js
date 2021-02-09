@@ -3,12 +3,14 @@ import './Message.css'
 import { Emote } from 'helpers/Constants'
 import tinycolor from 'tinycolor2'
 
+const MAX_EMOTE_SIZE = 112 * 2 / 3
+
 const renderText = (text, key) => <span key={key}>{text}</span>
 const renderEmote = (id, generateUrl, emoteLevel, key) => (
   <img
     key={key}
     className={`emote emote${emoteLevel}`}
-    src={generateUrl(id, emoteLevel)}
+    src={generateUrl(id, Emote.large)}
     alt='emote'
     />
 )
@@ -25,7 +27,7 @@ const renderMessageText = (message, emoteLevel) => message.map(({ type, data }, 
 const emoteWidth = emoteLevel => {
   switch(emoteLevel) {
     case 2: return 56 + 4
-    case 3: return 112
+    case 3: return MAX_EMOTE_SIZE
     default: return 28
   }
 }
@@ -39,7 +41,7 @@ const calcWidth = (message, emoteLevel = 1) => {
       default: return acc
     }
   }, 0)
-  if (estimate < 112) return 112
+  if (estimate < MAX_EMOTE_SIZE) return MAX_EMOTE_SIZE
   return Math.min(estimate, 300)
 }
 
