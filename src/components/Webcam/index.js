@@ -4,15 +4,24 @@ import { useParams } from 'react-router-dom'
 
 function Webcam(props) {
   const { mask = false } = props
-  const { position = 'left' } = useParams()
+  const { position = '' } = useParams()
 
   const frameWrapperClasses = ['webcam-frame-wrapper']
 
-  switch (position) {
-    case 'right': frameWrapperClasses.push('wf-right')
-      break
-    case 'left':
-    default: frameWrapperClasses.push('wf-left')
+  if (position.includes('left')) {
+    frameWrapperClasses.push('wf-left')
+  }
+
+  if (position.includes('right')) {
+    frameWrapperClasses.push('wf-right')
+  }
+
+  if (position.includes('top')) {
+    frameWrapperClasses.push('wf-top')
+  }
+
+  if (position.includes('bottom')) {
+    frameWrapperClasses.push('wf-bottom')
   }
 
   const titleClasses = ['webcam-title-wrapper']

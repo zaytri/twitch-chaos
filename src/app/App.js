@@ -20,7 +20,7 @@ function App() {
   return (
       <div className={appClasses.join(' ')}>
         <Switch>
-          <Route path='/cam/:position'>
+          <Route path={['/cam/:position', '/cam']}>
             <Webcam mask={mask} />
           </Route>
           <Route path='/chat'>
