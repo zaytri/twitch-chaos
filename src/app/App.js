@@ -17,9 +17,6 @@ function App() {
   const appClasses = ['app']
   if (mask) appClasses.push('app-mask')
 
-  const linksClasses = ['links']
-  if (home) linksClasses.push('links-home')
-
   return (
       <div className={appClasses.join(' ')}>
         <Switch>
@@ -29,15 +26,17 @@ function App() {
           <Route path='/chat'>
             <Messages />
           </Route>
+          <Route path='/'>
+            <div className='links'>
+              <Link className='link' to='/'>Home</Link>
+              <Link className='link' to='/chat'>Chat</Link>
+              <Link className='link' to='/cam/left'>Webcam Left</Link>
+              <Link className='link' to='/cam/right'>Webcam Right</Link>
+              <Link className='link' to='/cam/left/mask'>Webcam Left Mask</Link>
+              <Link className='link' to='/cam/right/mask'>Webcam Right Mask</Link>
+            </div>
+          </Route>
         </Switch>
-        <div className={linksClasses.join(' ')}>
-          <Link className='link' to='/'>Home</Link>
-          <Link className='link' to='/chat'>Chat</Link>
-          <Link className='link' to='/cam/left'>Webcam Left</Link>
-          <Link className='link' to='/cam/right'>Webcam Right</Link>
-          <Link className='link' to='/cam/left/mask'>Webcam Left Mask</Link>
-          <Link className='link' to='/cam/right/mask'>Webcam Right Mask</Link>
-        </div>
       </div>
   )
 }
