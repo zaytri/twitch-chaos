@@ -11,7 +11,6 @@ import {
 
 function App() {
   const { pathname } = useLocation()
-  const home = pathname === '/'
 
   const mask = pathname.split('/').pop() === 'mask'
   const appClasses = ['app']
