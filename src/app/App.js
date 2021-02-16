@@ -26,13 +26,45 @@ function App() {
             <Messages />
           </Route>
           <Route path='/'>
-            <div className='links'>
-              <Link className='link' to='/'>Home</Link>
-              <Link className='link' to='/chat'>Chat</Link>
-              <Link className='link' to='/cam/left'>Webcam Left</Link>
-              <Link className='link' to='/cam/right'>Webcam Right</Link>
-              <Link className='link' to='/cam/left/mask'>Webcam Left Mask</Link>
-              <Link className='link' to='/cam/right/mask'>Webcam Right Mask</Link>
+            <div className='home'>
+              <div className='links'>
+                <Link className='link' to='/'>Home</Link>
+              </div>
+              <div className='links'>
+                <Link className='link' to='/chat'>Chat</Link>
+              </div>
+              <p className='category'>Webcam</p>
+              <div className='links'>
+                <Link className='link' to='/cam/topleft'>🡬</Link>
+                <Link className='link' to='/cam/top'>🡩</Link>
+                <Link className='link' to='/cam/topright'>🡭</Link>
+              </div>
+              <div className='links'>
+                <Link className='link' to='/cam/left'>🡨</Link>
+                <Link className='link' to='/cam'>⭘</Link>
+                <Link className='link' to='/cam/right'>🡪</Link>
+              </div>
+              <div className='links'>
+                <Link className='link' to='/cam/bottomleft'>🡯</Link>
+                <Link className='link' to='/cam/bottom'>🡫</Link>
+                <Link className='link' to='/cam/bottomright'>🡮</Link>
+              </div>
+              <p className='category'>Webcam Mask</p>
+              <div className='links'>
+                <Link className='link' to='/cam/topleft/mask'>🡬</Link>
+                <Link className='link' to='/cam/top/mask'>🡩</Link>
+                <Link className='link' to='/cam/topright/mask'>🡭</Link>
+              </div>
+              <div className='links'>
+                <Link className='link' to='/cam/left/mask'>🡨</Link>
+                <Link className='link' to='/cam/mask'>⭘</Link>
+                <Link className='link' to='/cam/right/mask'>🡪</Link>
+              </div>
+              <div className='links'>
+                <Link className='link' to='/cam/bottomleft/mask'>🡯</Link>
+                <Link className='link' to='/cam/bottom/mask'>🡫</Link>
+                <Link className='link' to='/cam/bottomright/mask'>🡮</Link>
+              </div>
             </div>
           </Route>
         </Switch>
